@@ -1,7 +1,9 @@
 package com.yicj.study;
 
+import com.yicj.study.register.MyBeanImport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 
 /**
  * ClassName: ConfModeApp
@@ -12,11 +14,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
+@Import(MyBeanImport.class)
 @SpringBootApplication
 public class ConfModeApp {
-
     public static void main(String[] args) {
-
         SpringApplication.run(ConfModeApp.class, args) ;
     }
 }
