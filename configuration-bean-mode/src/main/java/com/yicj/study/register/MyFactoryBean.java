@@ -1,5 +1,6 @@
 package com.yicj.study.register;
 
+import com.yicj.study.model.Animal;
 import com.yicj.study.model.Monky;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
@@ -14,10 +15,10 @@ import org.springframework.stereotype.Component;
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
 @Component
-public class MyFactoryBean implements FactoryBean {
+public class MyFactoryBean implements FactoryBean <Animal>{
 
     @Override
-    public Object getObject() throws Exception {
+    public Animal getObject() throws Exception {
         return new Monky();
     }
 

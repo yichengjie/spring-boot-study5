@@ -6,6 +6,8 @@
     <modules>
         <module>system-initializer</module>
         <module>configuration-bean-mode</module>
+        <module>property-configuration</module>
+        <module>beanpostprocessor-study</module>
     </modules>
 
     <parent>
