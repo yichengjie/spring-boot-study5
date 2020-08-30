@@ -9,6 +9,7 @@
         <module>property-configuration</module>
         <module>beanpostprocessor-study</module>
         <module>spring-profile</module>
+        <module>condition-study</module>
     </modules>
 
     <parent>
