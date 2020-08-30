@@ -21,7 +21,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(WeatherSource.class)
 @ConditionalOnProperty(name = "weather.enable", havingValue = "enable")
 public class WeatherAutoConfiguration {
-
     @Autowired
     private WeatherSource weatherSource ;
 
