@@ -11,6 +11,7 @@
         <module>spring-profile</module>
         <module>condition-study</module>
         <module>starter-study</module>
+        <module>mybatis-springboot-study</module>
     </modules>
 
     <parent>
