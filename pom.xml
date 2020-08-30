@@ -8,6 +8,7 @@
         <module>configuration-bean-mode</module>
         <module>property-configuration</module>
         <module>beanpostprocessor-study</module>
+        <module>spring-profile</module>
     </modules>
 
     <parent>
