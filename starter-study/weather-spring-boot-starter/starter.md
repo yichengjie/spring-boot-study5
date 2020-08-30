@@ -45,3 +45,10 @@ e. 通过maven打包安装到仓库
 - c. 类中引用先关的服务
 - d. 调用相关服务
 
+
+### starter自动配置类导入的原理
+- a. 启动类上的@SpringBootApplication
+- b. 引入AutoConfigurationImportSelector
+- c. ConfigurationClassParser中处理
+- d. spring.factories中EnableAutoConfiguration实现
+
