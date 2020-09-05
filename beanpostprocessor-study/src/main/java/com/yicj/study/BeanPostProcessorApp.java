@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * ClassName: BesanPostProcessorApp
+ * ClassName: BeanPostProcessorApp
  * Description: TODO(描述)
  * Date: 2020/8/29 20:26
  *
