@@ -5,9 +5,6 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
-import org.springframework.util.MultiValueMap;
-
-import java.util.List;
 import java.util.Map;
 
 public class Hello2ImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
