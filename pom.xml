@@ -12,6 +12,7 @@
         <module>condition-study</module>
         <module>starter-study</module>
         <module>mybatis-springboot-study</module>
+        <module>bean-register-study</module>
     </modules>
 
     <parent>
