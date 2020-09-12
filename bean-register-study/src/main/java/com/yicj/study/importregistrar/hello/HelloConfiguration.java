@@ -1,4 +1,4 @@
-package com.yicj.study.importregistrar;
+package com.yicj.study.importregistrar.hello;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
