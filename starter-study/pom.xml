@@ -12,6 +12,7 @@
     <modules>
         <module>weather-spring-boot-starter</module>
         <module>starter-study-app</module>
+        <module>spring-boot-starter-metrics</module>
     </modules>
 
     <artifactId>starter-study</artifactId>
