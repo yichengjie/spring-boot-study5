@@ -18,4 +18,9 @@
     <insert id="insert" parameterType="User">
         insert into user(username, password, roles) values (#{username}, #{password},#{roles})
     </insert>
+
+    <select id="selectItemExportByQueryInfo" resultSets="financeInvoiceItemResultMapper">
+        select *
+        from user u
+    </select>
 </mapper>
