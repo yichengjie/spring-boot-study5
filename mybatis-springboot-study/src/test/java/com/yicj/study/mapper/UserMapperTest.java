@@ -1,7 +1,7 @@
 package com.yicj.study.mapper;
 
 import com.yicj.study.MybatisApp;
-import com.yicj.study.common.BaseExportList;
+import com.yicj.study.common.MyKeyList;
 import com.yicj.study.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -39,7 +38,7 @@ public class UserMapperTest {
 
     @Test
     public void selectByUserItemResultMapper(){
-        BaseExportList<User> list = userMapper.selectByUserItemResultMapper();
+        MyKeyList<User> list = userMapper.selectByUserItemResultMapper();
         list.forEach(user -> log.info("{}", user));
         Set<String> keys = list.getKeys();
         keys.forEach(id -> log.info("id : {}", id));

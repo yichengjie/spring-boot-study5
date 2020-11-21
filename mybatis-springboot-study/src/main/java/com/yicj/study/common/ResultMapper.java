@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ResultMapper<T> {
-
     /**
      * 默认返回List集合，子类可重写此方法返回特定类型
      * eg: Map，或则Integer

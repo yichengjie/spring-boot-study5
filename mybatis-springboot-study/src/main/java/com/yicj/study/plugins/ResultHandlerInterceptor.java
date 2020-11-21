@@ -41,7 +41,7 @@ public class ResultHandlerInterceptor implements Interceptor {
     }
     private Object execHandlerResult(String mapper, ResultSet rs) throws SQLException {
         try {
-            ResultMapper resultMapper = ApplicationContextUtil.getBeanIgnoreEx(mapper);
+            ResultMapper resultMapper = ApplicationContextUtil.getBean4ResultMapper(mapper);
             if (resultMapper != null){
                 return resultMapper.handler(rs) ;
             }
