@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ResultMapper {
+public interface ResultMapper<T> {
 
-    default Object handler(ResultSet rs) throws SQLException {
-        List result = Lists.newArrayList() ;
+    default List<T> handler(ResultSet rs) throws SQLException {
+        List<T> result = Lists.newArrayList() ;
         int row =1 ;
         while (rs !=null && rs.next()){
             result.add(handlerRow(rs, row)) ;
@@ -18,5 +18,5 @@ public interface ResultMapper {
         return result ;
     }
 
-    Object handlerRow(ResultSet rs, int rowNum) throws SQLException ;
+    T handlerRow(ResultSet rs, int rowNum) throws SQLException ;
 }

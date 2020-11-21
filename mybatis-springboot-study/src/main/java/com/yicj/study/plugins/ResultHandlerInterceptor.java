@@ -11,19 +11,25 @@ import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
+import org.apache.ibatis.reflection.MetaObject;
+import org.apache.ibatis.reflection.SystemMetaObject;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 @Slf4j
-@Intercepts(@Signature(method = "handleResultSets", type = ResultSetHandler.class, args = { java.sql.Statement.class }))
+@Component
+@Intercepts(@Signature(method = "handleResultSets", type = ResultSetHandler.class, args = { Statement.class }))
 public class ResultHandlerInterceptor implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         ResultSetHandler resultSetHandler = (ResultSetHandler)invocation.getTarget() ;
-        MappedStatement mappedStatement = null ; /*(MappedStatement) ReflectionUtils.getFieldValue(resultSetHandler,
-                "mappedStatement");*/
+        MetaObject metaObject = SystemMetaObject.forObject(resultSetHandler);
+        MappedStatement mappedStatement = (MappedStatement)metaObject.getValue("mappedStatement") ;
+
         SqlCommandType sqlCommandType = mappedStatement.getSqlCommandType();
         if (sqlCommandType == SqlCommandType.SELECT){
             String mapper = StringUtils.join(mappedStatement.getResultSets()) ;
@@ -35,8 +41,7 @@ public class ResultHandlerInterceptor implements Interceptor {
         }
         return invocation.proceed();
     }
-
-    private Object execHandlerResult(String mapper, ResultSet rs) throws SQLException {
+    private List<?> execHandlerResult(String mapper, ResultSet rs) throws SQLException {
         try {
             ResultMapper resultMapper = ApplicationContextUtil.getBeanIgnoreEx(mapper);
             if (resultMapper != null){
@@ -49,5 +54,4 @@ public class ResultHandlerInterceptor implements Interceptor {
         }
         return null ;
     }
-
 }

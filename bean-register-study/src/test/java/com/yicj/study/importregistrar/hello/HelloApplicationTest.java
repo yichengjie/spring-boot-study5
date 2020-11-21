@@ -21,7 +21,7 @@ public class HelloApplicationTest {
 
     @Test
     public void contextLoads(){
-        log.info("service name : {}", helloService.getClass());
+        log.info("resultmapper name : {}", helloService.getClass());
     }
 
 }

@@ -1,6 +1,6 @@
-package com.yicj.study.service.decorate;
+package com.yicj.study.resultmapper.decorate;
 
-import com.yicj.study.service.UserService;
+import com.yicj.study.resultmapper.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -14,7 +14,7 @@ public class UserServiceDecorate implements UserService {
 
     @Override
     public void save() {
-        log.info("--- decorate user service  ...");
+        log.info("--- decorate user resultmapper  ...");
         userService.save();
     }
 }

@@ -1,4 +1,4 @@
-package com.yicj.study.service;
+package com.yicj.study.resultmapper;
 
 public interface UserService {
     void save() ;

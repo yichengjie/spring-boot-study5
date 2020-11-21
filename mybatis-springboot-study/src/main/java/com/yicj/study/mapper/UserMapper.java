@@ -3,6 +3,8 @@ package com.yicj.study.mapper;
 import com.yicj.study.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * ClassName: UserMapper
  * Description: TODO(描述)
@@ -20,4 +22,6 @@ public interface UserMapper {
     User select4Login(String username, String password) ;
 
     int insert(User user) ;
+
+    List<User> selectByUserItemResultMapper() ;
 }

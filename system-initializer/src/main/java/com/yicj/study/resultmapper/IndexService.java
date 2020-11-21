@@ -1,4 +1,4 @@
-package com.yicj.study.service;
+package com.yicj.study.resultmapper;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
