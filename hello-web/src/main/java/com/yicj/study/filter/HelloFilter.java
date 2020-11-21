@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
-@Order(0)
+@Order(1)
 @Component
-public class RequestBufferedFilter extends OncePerRequestFilter {
-
+public class HelloFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        request = new BufferedHttpRequest(request) ;
+        byte [] bytes = new byte[1024] ;
+        request.getInputStream().read(bytes);
+        String content = new String(bytes, "UTF-8");
+        log.info("过滤器拿到请求数据 :{}", content);
         filterChain.doFilter(request, response);
     }
 }
