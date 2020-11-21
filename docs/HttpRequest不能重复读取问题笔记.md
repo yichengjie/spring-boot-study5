@@ -31,7 +31,7 @@
     }
     ```
 3. 运行发现hello方法中获取到的user属性值id和name都为null
-#### 解决方式
+#### 解决方式 
 1. 在所有所有调用request.getInputStream()方法之前编写Filter,替换原HttpServletRequest
     ```java
     @Order(0)
