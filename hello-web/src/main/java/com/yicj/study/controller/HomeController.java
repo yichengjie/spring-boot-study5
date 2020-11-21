@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
-
     @PostMapping("/hello")
     @ResponseBody
     public User hello(@RequestBody  User user){
