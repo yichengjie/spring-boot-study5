@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 
 import java.util.concurrent.TimeUnit;
 
+
 @SpringBootApplication
 public class DemoApplication {
 
@@ -16,6 +17,5 @@ public class DemoApplication {
         // 启动Reporter
         ConsoleReporter reporter = ctx.getBean(ConsoleReporter.class);
         reporter.start(10, TimeUnit.SECONDS);
-        
     }
 }

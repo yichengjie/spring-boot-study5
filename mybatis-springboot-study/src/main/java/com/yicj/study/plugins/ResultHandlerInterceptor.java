@@ -1,6 +1,6 @@
 package com.yicj.study.plugins;
 
-import com.yicj.study.ApplicationContextUtil;
+import com.yicj.study.common.ApplicationContextUtil;
 import com.yicj.study.common.ResultMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

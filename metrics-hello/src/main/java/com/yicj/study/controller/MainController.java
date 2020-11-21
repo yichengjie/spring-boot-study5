@@ -7,6 +7,7 @@ import com.codahale.metrics.Timer;
 import com.yicj.study.config.ListManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,7 +32,7 @@ public class MainController {
     //@Autowired
     private ListManager listManager;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/helloWorld")
     @ResponseBody
     public String helloWorld() {
 

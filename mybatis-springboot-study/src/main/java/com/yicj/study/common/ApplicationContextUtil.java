@@ -1,6 +1,5 @@
-package com.yicj.study;
+package com.yicj.study.common;
 
-import com.yicj.study.common.ResultMapper;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
