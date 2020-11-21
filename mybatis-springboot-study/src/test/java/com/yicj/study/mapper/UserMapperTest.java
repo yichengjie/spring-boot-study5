@@ -39,7 +39,7 @@ public class UserMapperTest {
 
     @Test
     public void selectByUserItemResultMapper(){
-        BaseExportList<User> list = (BaseExportList<User>)userMapper.selectByUserItemResultMapper();
+        BaseExportList<User> list = userMapper.selectByUserItemResultMapper();
         list.forEach(user -> log.info("{}", user));
         Set<String> keys = list.getKeys();
         keys.forEach(id -> log.info("id : {}", id));

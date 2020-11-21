@@ -14,11 +14,9 @@ import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 import org.springframework.stereotype.Component;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 @Slf4j
 @Component
@@ -41,7 +39,7 @@ public class ResultHandlerInterceptor implements Interceptor {
         }
         return invocation.proceed();
     }
-    private List<?> execHandlerResult(String mapper, ResultSet rs) throws SQLException {
+    private Object execHandlerResult(String mapper, ResultSet rs) throws SQLException {
         try {
             ResultMapper resultMapper = ApplicationContextUtil.getBeanIgnoreEx(mapper);
             if (resultMapper != null){

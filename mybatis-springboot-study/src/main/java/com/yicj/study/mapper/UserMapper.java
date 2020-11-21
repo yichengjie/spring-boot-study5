@@ -1,5 +1,6 @@
 package com.yicj.study.mapper;
 
+import com.yicj.study.common.BaseExportList;
 import com.yicj.study.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -23,5 +24,5 @@ public interface UserMapper {
 
     int insert(User user) ;
 
-    List<User> selectByUserItemResultMapper() ;
+    BaseExportList<User> selectByUserItemResultMapper() ;
 }

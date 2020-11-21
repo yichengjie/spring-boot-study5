@@ -12,8 +12,9 @@ import java.util.List;
 @Component("userItemResultMapper")
 public class UserItemResultMapper implements ResultMapper<User> {
 
+    // 具体返回类型根据Mapper中定义
     @Override
-    public List<User> handler(ResultSet rs) throws SQLException {
+    public Object handler(ResultSet rs) throws SQLException {
         BaseExportList<User> list = new BaseExportList<>() ;
         int row = 1 ;
         while (rs != null && rs.next()){

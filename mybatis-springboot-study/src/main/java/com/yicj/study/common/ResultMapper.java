@@ -8,7 +8,14 @@ import java.util.List;
 
 public interface ResultMapper<T> {
 
-    default List<T> handler(ResultSet rs) throws SQLException {
+    /**
+     * 默认返回List集合，子类可重写此方法返回特定类型
+     * eg: Map，或则Integer
+     * @param rs
+     * @return
+     * @throws SQLException
+     */
+    default Object handler(ResultSet rs) throws SQLException {
         List<T> result = Lists.newArrayList() ;
         int row =1 ;
         while (rs !=null && rs.next()){
