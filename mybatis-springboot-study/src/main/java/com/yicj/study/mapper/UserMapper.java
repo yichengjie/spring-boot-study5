@@ -13,7 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
-@Mapper
 public interface UserMapper {
 
     User selectById(Integer id) ;

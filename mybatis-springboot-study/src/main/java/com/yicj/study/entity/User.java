@@ -1,6 +1,7 @@
 package com.yicj.study.entity;
 
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
 
 /**
  * ClassName: User
