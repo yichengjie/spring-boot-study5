@@ -26,6 +26,6 @@
     </environments>
 
     <mappers>
-        <package name="com.yicj.study.mapper"/>
+        <package name="mappers"/>
     </mappers>
 </configuration>
