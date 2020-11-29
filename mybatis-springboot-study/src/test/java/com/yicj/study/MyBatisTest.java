@@ -1,4 +1,4 @@
-package com.yicj.study.mapper.com.yicj.study;
+package com.yicj.study;
 
 import com.yicj.study.entity.User;
 import org.apache.ibatis.io.Resources;
