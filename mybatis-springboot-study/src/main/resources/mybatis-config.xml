@@ -9,6 +9,8 @@
     </typeAliases>
     <!--配置MyBatis 去哪里找映射文件-->
     <mappers>
-        <package name="com.yicj.study.mapper"/>
+        <!--<package name="mappers"/>-->
+        <mapper resource="mappers/SysRoleMapper.xml" />
+        <mapper resource="mappers/UserMapper.xml" />
     </mappers>
 </configuration>
