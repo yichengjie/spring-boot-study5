@@ -14,6 +14,7 @@
            <package name="com.yicj.study.entity"/>
         </typeAliases>
         <!--配置MyBatis 去哪里找映射文件-->
+        <!--注意如果这里使用package的话路径一定要与java的mapper接口包名称一致，否则将找不到xml文件-->
         <mappers>
             <package name="com.yicj.study.mapper"/>
         </mappers>

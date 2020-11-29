@@ -25,7 +25,9 @@
         </environment>
     </environments>
 
+    <!--注意如果这里使用package的话路径一定要与java的mapper接口路径一致，否则将找不到xml文件-->
     <mappers>
-        <package name="mappers"/>
+        <!--<package name="mappers"/>-->
+        <package name="com.yicj.study.mapper"/>
     </mappers>
 </configuration>

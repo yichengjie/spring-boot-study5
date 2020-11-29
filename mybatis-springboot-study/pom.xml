@@ -62,32 +62,16 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <encoding>utf-8</encoding>
-                    <useDefaultDelimiters>true</useDefaultDelimiters>
-                    <resources>
-                        <resource>
-                            <directory>src/main/resources</directory>
-                            <filtering>true</filtering>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </resource>
-                        <resource>
-                            <directory>src/main/java</directory>
-                            <includes>
-                                <include>**/*.xml</include>
-                            </includes>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
-        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <!--默认是true-->
+                <!--<filtering>true</filtering>-->
+            </resource>
+        </resources>
     </build>
 
 
