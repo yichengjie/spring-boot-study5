@@ -16,7 +16,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.yicj.study.mapper")
 @SpringBootApplication
 public class MybatisApp {
-
     public static void main(String[] args) {
         SpringApplication.run(MybatisApp.class, args) ;
     }
