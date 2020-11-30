@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/exception")
 public class GlobalExceptionController {
-
     @GetMapping("/hello/{id}")
     public String hello(@PathVariable String id){
         if ("1".equals(id)){

@@ -8,5 +8,4 @@ public interface CommonConstants {
     String EX_TOKEN_CODE = "000-00-00-003" ;
     // duplicate key
     String EX_DUPLICATE_KEY_CODE = "000-00-00-004" ;
-
 }
