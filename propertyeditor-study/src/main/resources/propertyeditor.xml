@@ -5,7 +5,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="dateFoo" class="com.yicj.study.propertyeditor.DateFoo">
-        <property name="date" value="2007-10-16" />
+        <property name="date" value="2007/10/16" />
     </bean>
 
     <bean id="datePropertyEditor" class="com.yicj.study.propertyeditor.DatePropertyEditor">
