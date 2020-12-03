@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dateFoo" class="com.yicj.study.propertyeditor.DateFoo">
+        <property name="date" value="2007-10-16" />
+    </bean>
+
+    <bean id="datePropertyEditor" class="com.yicj.study.propertyeditor.DatePropertyEditor">
+        <property name="datePattern" value="yyyy/MM/dd" />
+    </bean>
+
+    <bean id="datePropertyEditorRegistrar" class="com.yicj.study.propertyeditor.DatePropertyEditorRegistrar">
+        <property name="propertyEditor"  ref="datePropertyEditor"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+            <list>
+                <ref bean="datePropertyEditorRegistrar" />
+            </list>
+        </property>
+    </bean>
+</beans>

@@ -15,6 +15,7 @@
         <module>bean-register-study</module>
         <module>metrics-hello</module>
         <module>hello-web</module>
+        <module>propertyeditor-study</module>
     </modules>
 
     <parent>
