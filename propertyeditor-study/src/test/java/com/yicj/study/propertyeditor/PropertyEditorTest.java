@@ -1,36 +1,32 @@
 package com.yicj.study.propertyeditor;
 
 import org.junit.Test;
+import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 public class PropertyEditorTest {
-
 
     @Test
     public void test1(){
         XmlBeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("propertyeditor.xml"));
-
         /*CustomEditorConfigurer是Spring提供的BeanFactoryProcessor的一个实现，专门用来搞类型转换的*/
+        //1.  propertyEditor 实例化
+        DatePropertyEditor datePropertyEditor = new DatePropertyEditor();
+        datePropertyEditor.setDatePattern("yyyy/MM/dd");
+        //2. propertyEditorRegistrar实例化
+        DatePropertyEditorRegistrar datePropertyEditorRegistrar = new DatePropertyEditorRegistrar() ;
+        datePropertyEditorRegistrar.setPropertyEditor(datePropertyEditor);
+        //3. customEditorConfigurer 实例化
         CustomEditorConfigurer configurer = new CustomEditorConfigurer();
-
-        DatePropertyEditor my = new DatePropertyEditor();
-        my.setDatePattern("yyyy-MM-dd");
-
-        Map customerEditors = new HashMap();
-        customerEditors.put(Date.class, DatePropertyEditor.class);
-
-        configurer.setCustomEditors(customerEditors);
+        configurer.setPropertyEditorRegistrars(new PropertyEditorRegistrar[]{datePropertyEditorRegistrar});
+        // 执行beanFactory的后置处理
         configurer.postProcessBeanFactory(beanFactory);
-
-        DateFoo e = (DateFoo)beanFactory.getBean("entity");
+        // 获取实例对象
+        DateFoo e = (DateFoo)beanFactory.getBean("dateFoo");
         System.out.println(e.getDate());
     }
 
