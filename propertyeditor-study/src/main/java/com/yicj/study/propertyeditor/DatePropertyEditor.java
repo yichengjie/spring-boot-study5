@@ -5,9 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DatePropertyEditor extends PropertyEditorSupport {
-
     private String datePattern;
-
     public String getDatePattern() {
         return datePattern;
     }
@@ -32,5 +30,4 @@ public class DatePropertyEditor extends PropertyEditorSupport {
     public String getAsText() {
         return super.getAsText();
     }
-
 }
