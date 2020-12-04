@@ -1,4 +1,4 @@
-package com.yicj.study.propertyeditor;
+package com.yicj.study.transaction;
 
 import lombok.Setter;
 import org.springframework.beans.PropertyEditorRegistrar;

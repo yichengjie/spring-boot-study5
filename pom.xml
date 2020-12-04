@@ -16,6 +16,7 @@
         <module>metrics-hello</module>
         <module>hello-web</module>
         <module>propertyeditor-study</module>
+        <module>transaction-study</module>
     </modules>
 
     <parent>
@@ -49,6 +50,12 @@
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-annotation</artifactId>
                 <version>${metrics.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.9.9</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,4 +1,4 @@
-package com.yicj.study.propertyeditor;
+package com.yicj.study.transaction;
 
 import org.junit.Test;
 import org.springframework.beans.PropertyEditorRegistrar;
