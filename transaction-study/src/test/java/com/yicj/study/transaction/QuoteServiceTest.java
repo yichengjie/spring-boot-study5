@@ -1,31 +1,29 @@
 package com.yicj.study.transaction;
 
-import com.yicj.study.transaction.entity.Quota;
-import com.yicj.study.transaction.service.IQuotaService;
+import com.yicj.study.transaction.entity.Quote;
+import com.yicj.study.transaction.service.IQuoteService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.CustomEditorConfigurer;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
 
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TransactionApplication.class)
-public class QuotaServiceTest {
+public class QuoteServiceTest {
 
     @Autowired
-    private IQuotaService quotaService ;
+    private IQuoteService quoteService ;
 
     @Test
     public void getQuota(){
-        Quota quota = quotaService.getQuota();
+        Quote quota = quoteService.getQuote();
         log.info("quota : {}", quota);
     }
 }

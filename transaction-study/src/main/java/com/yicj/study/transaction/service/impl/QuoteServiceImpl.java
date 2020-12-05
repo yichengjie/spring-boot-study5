@@ -1,27 +1,25 @@
 package com.yicj.study.transaction.service.impl;
 
-import com.yicj.study.transaction.entity.Quota;
-import com.yicj.study.transaction.service.IQuotaService;
-import lombok.RequiredArgsConstructor;
+import com.yicj.study.transaction.entity.Quote;
+import com.yicj.study.transaction.service.IQuoteService;
 import org.joda.time.DateTime;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-@Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class QuotaServiceImpl implements IQuotaService {
-
+//@Service
+//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class QuoteServiceImpl implements IQuoteService {
     private final JdbcTemplate jdbcTemplate ;
+    public QuoteServiceImpl(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate ;
+    }
 
     @Override
-    @Transactional
-    public Quota getQuota() {
+    public Quote getQuote() {
         String sql = "select * from quota where id =1" ;
         return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
-            Quota quota = new Quota() ;
+            Quote quota = new Quote() ;
             int id = rs.getInt("id");
             String name = rs.getString("name");
             quota.setId(id);
@@ -31,22 +29,22 @@ public class QuotaServiceImpl implements IQuotaService {
     }
 
     @Override
-    public Quota getQuotaByDateTime(DateTime dateTime) {
+    public Quote getQuoteByDateTime(DateTime dateTime) {
         return null;
     }
 
     @Override
-    public void saveQuota(Quota quota) {
+    public void saveQuote(Quote quota) {
 
     }
 
     @Override
-    public void updateQuota(Quota quota) {
+    public void updateQuote(Quote quota) {
 
     }
 
     @Override
-    public void deleteQuota(Quota quota) {
+    public void deleteQuote(Quote quota) {
 
     }
 }
