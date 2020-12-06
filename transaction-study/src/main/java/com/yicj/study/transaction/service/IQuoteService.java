@@ -4,7 +4,7 @@ import com.yicj.study.transaction.entity.Quote;
 import org.joda.time.DateTime;
 
 public interface IQuoteService {
-    Quote getQuote() ;
+    Quote queryById() ;
     Quote getQuoteByDateTime(DateTime dateTime) ;
     void saveQuote(Quote quote) ;
     void updateQuote(Quote quote) ;

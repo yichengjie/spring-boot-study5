@@ -52,7 +52,7 @@ public class MyConfig {
         TransactionInterceptor transactionInterceptor = new TransactionInterceptor() ;
         transactionInterceptor.setTransactionManager(transactionManager());
         Properties properties = new Properties();
-        properties.setProperty("getQuote*","PROPAGATION_SUPPORTS,readOnly,timeout_20") ;
+        properties.setProperty("queryById*","PROPAGATION_SUPPORTS,readOnly,timeout_20") ;
         properties.setProperty("saveQuote", "PROPAGATION_REQUIRED") ;
         properties.setProperty("updateQuote","PROPAGATION_REQUIRED") ;
         properties.setProperty("deleteQuote","PROPAGATION_REQUIRED") ;

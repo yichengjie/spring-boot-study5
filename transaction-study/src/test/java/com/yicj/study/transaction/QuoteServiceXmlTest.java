@@ -14,17 +14,19 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
+
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TransactionXmlApplication.class)
 public class QuoteServiceXmlTest {
 
-    @Autowired
+    @Resource
     private IQuoteService quoteService ;
 
     @Test
     public void getQuota(){
-        Quote quota = quoteService.getQuote();
+        Quote quota = quoteService.queryById();
         log.info("quota : {}", quota);
     }
 }

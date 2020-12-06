@@ -14,7 +14,7 @@ public class QuoteServiceImpl implements IQuoteService {
     }
 
     @Override
-    public Quote getQuote() {
+    public Quote queryById() {
         String sql = "select * from quota where id =1" ;
         return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
             Quote quota = new Quote() ;
