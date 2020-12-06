@@ -3,7 +3,6 @@ package com.yicj.study.transaction.config;
 import com.yicj.study.transaction.service.IQuoteService;
 import com.yicj.study.transaction.service.impl.QuoteServiceImpl;
 import org.springframework.aop.framework.ProxyFactoryBean;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,6 +14,8 @@ import java.util.Properties;
 
 @Configuration
 public class MyConfig {
+
+
 
     @Bean(name = "quoteServiceTarget")
     public IQuoteService quoteServiceTarget(JdbcTemplate jdbcTemplate){
@@ -41,7 +42,6 @@ public class MyConfig {
         return transactionInterceptor ;
     }
 
-    @Qualifier
     @Bean(name = "quoteService")
     public ProxyFactoryBean quoteService(JdbcTemplate jdbcTemplate) throws ClassNotFoundException {
         ProxyFactoryBean proxyFactoryBean = new ProxyFactoryBean() ;

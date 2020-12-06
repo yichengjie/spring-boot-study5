@@ -4,11 +4,9 @@ import com.yicj.study.transaction.entity.Quote;
 import com.yicj.study.transaction.service.IQuoteService;
 import org.joda.time.DateTime;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.transaction.annotation.Transactional;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 
-//@Service
-//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class QuoteServiceImpl implements IQuoteService {
     private final JdbcTemplate jdbcTemplate ;
     public QuoteServiceImpl(JdbcTemplate jdbcTemplate){
@@ -30,21 +28,21 @@ public class QuoteServiceImpl implements IQuoteService {
 
     @Override
     public Quote getQuoteByDateTime(DateTime dateTime) {
-        return null;
+        throw new NotImplementedException() ;
     }
 
     @Override
     public void saveQuote(Quote quota) {
-
+        throw new NotImplementedException() ;
     }
 
     @Override
     public void updateQuote(Quote quota) {
-
+        throw new NotImplementedException() ;
     }
 
     @Override
     public void deleteQuote(Quote quota) {
-
+        throw new NotImplementedException() ;
     }
 }

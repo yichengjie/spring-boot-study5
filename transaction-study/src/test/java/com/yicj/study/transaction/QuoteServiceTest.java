@@ -21,6 +21,9 @@ public class QuoteServiceTest {
     @Autowired
     private IQuoteService quoteService ;
 
+    @Autowired
+    private ApplicationContext applicationContext ;
+
     @Test
     public void getQuota(){
         Quote quota = quoteService.getQuote();
