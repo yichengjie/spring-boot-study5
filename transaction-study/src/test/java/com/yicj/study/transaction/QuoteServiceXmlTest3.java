@@ -1,6 +1,6 @@
 package com.yicj.study.transaction;
 
-import com.yicj.study.transaction.bootstrap.xml.TransactionXmlApplication2;
+import com.yicj.study.transaction.bootstrap.xml.TransactionXmlApplication3;
 import com.yicj.study.transaction.entity.Quote;
 import com.yicj.study.transaction.service.IQuoteService;
 import lombok.extern.slf4j.Slf4j;
@@ -12,8 +12,8 @@ import javax.annotation.Resource;
 
 @Slf4j
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TransactionXmlApplication2.class)
-public class QuoteServiceXmlTest2 {
+@SpringBootTest(classes = TransactionXmlApplication3.class)
+public class QuoteServiceXmlTest3 {
 
     @Resource
     private IQuoteService quoteService ;

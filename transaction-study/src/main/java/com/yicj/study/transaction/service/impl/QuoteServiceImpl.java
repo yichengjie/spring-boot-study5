@@ -4,6 +4,8 @@ import com.yicj.study.transaction.entity.Quote;
 import com.yicj.study.transaction.service.IQuoteService;
 import org.joda.time.DateTime;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 
@@ -13,6 +15,7 @@ public class QuoteServiceImpl implements IQuoteService {
         this.jdbcTemplate = jdbcTemplate ;
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, timeout = 20)
     @Override
     public Quote queryById() {
         String sql = "select * from quota where id =1" ;
@@ -26,6 +29,7 @@ public class QuoteServiceImpl implements IQuoteService {
         }) ;
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, timeout = 20)
     @Override
     public Quote getQuoteByDateTime(DateTime dateTime) {
         throw new NotImplementedException() ;
