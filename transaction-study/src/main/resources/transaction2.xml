@@ -23,8 +23,11 @@
         <constructor-arg ref="jdbcTemplate" />
     </bean>
 
-    <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+    <!--TransactionProxyFactoryBean 集成ProxyFactoryBean、TransactionInterceptor功能于一身-->
+    <bean id="quoteService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="target" ref="quoteServiceTarget" />
         <property name="transactionManager" ref="transactionManager" />
+        <property name="proxyInterfaces" value="com.yicj.study.transaction.service.IQuoteService" />
         <property name="transactionAttributes">
             <props>
                 <prop key="queryById*">PROPAGATION_SUPPORTS,readOnly,timeout_20</prop>
@@ -32,16 +35,6 @@
                 <prop key="updateQuote">PROPAGATION_REQUIRED</prop>
                 <prop key="deleteQuote">PROPAGATION_REQUIRED</prop>
             </props>
-        </property>
-    </bean>
-
-    <bean id="quoteService" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="quoteServiceTarget" />
-        <property name="proxyInterfaces" value="com.yicj.study.transaction.service.IQuoteService" />
-        <property name="interceptorNames">
-            <list>
-                <value>transactionInterceptor</value>
-            </list>
         </property>
     </bean>
 

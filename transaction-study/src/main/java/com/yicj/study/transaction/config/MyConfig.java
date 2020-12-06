@@ -15,7 +15,7 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-//@Configuration
+@Configuration
 public class MyConfig {
 
     @Autowired
