@@ -2,20 +2,33 @@
     ```java
     @Configuration
     public class MyConfig {
+        @Autowired
+        private DataSourceProperties dataSourceProperties ;
         @Bean
-        public IQuoteService quoteServiceTarget(JdbcTemplate jdbcTemplate){
-            return new QuoteServiceImpl(jdbcTemplate);
+        public DataSource dataSource(){
+            BasicDataSource basicDataSource = new BasicDataSource();
+            basicDataSource.setUrl(dataSourceProperties.getUrl());
+            basicDataSource.setDriverClassName(dataSourceProperties.getDriverClassName());
+            basicDataSource.setUsername(dataSourceProperties.getUsername());
+            basicDataSource.setPassword(dataSourceProperties.getPassword());
+            return basicDataSource ;
         }
         @Bean
-        public PlatformTransactionManager transactionManager(DataSource dataSource){
+        public JdbcTemplate jdbcTemplate(){
+            JdbcTemplate jdbcTemplate = new JdbcTemplate() ;
+            jdbcTemplate.setDataSource(dataSource());
+            return jdbcTemplate ;
+        }
+        @Bean
+        public PlatformTransactionManager transactionManager(){
             DataSourceTransactionManager transactionManager = new DataSourceTransactionManager() ;
-            transactionManager.setDataSource(dataSource);
+            transactionManager.setDataSource(dataSource());
             return transactionManager ;
         }
         @Bean
-        public TransactionInterceptor transactionInterceptor(DataSource dataSource){
+        public TransactionInterceptor transactionInterceptor(){
             TransactionInterceptor transactionInterceptor = new TransactionInterceptor() ;
-            transactionInterceptor.setTransactionManager(transactionManager(dataSource));
+            transactionInterceptor.setTransactionManager(transactionManager());
             Properties properties = new Properties();
             properties.setProperty("getQuote*","PROPAGATION_SUPPORTS,readOnly,timeout_20") ;
             properties.setProperty("saveQuote", "PROPAGATION_REQUIRED") ;
@@ -25,6 +38,10 @@
             return transactionInterceptor ;
         }
         @Bean
+        public IQuoteService quoteServiceTarget(JdbcTemplate jdbcTemplate){
+            return new QuoteServiceImpl(jdbcTemplate);
+        }
+        @Bean(name = "quoteService")
         public ProxyFactoryBean quoteService(JdbcTemplate jdbcTemplate) throws ClassNotFoundException {
             ProxyFactoryBean proxyFactoryBean = new ProxyFactoryBean() ;
             proxyFactoryBean.setTarget(quoteServiceTarget(jdbcTemplate));
