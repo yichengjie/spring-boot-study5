@@ -1,4 +1,4 @@
-package com.yicj.study.component;
+package com.yicj.study.advice;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

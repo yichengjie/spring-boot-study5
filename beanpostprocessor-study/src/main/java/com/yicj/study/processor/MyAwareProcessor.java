@@ -1,6 +1,6 @@
 package com.yicj.study.processor;
 
-import com.yicj.study.component.Flag;
+import com.yicj.study.advice.Flag;
 import com.yicj.study.aware.MyAware;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;

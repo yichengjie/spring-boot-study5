@@ -1,4 +1,4 @@
-package com.yicj.study.component;
+package com.yicj.study.advice;
 
 import com.yicj.study.aware.MyAware;
 import lombok.extern.slf4j.Slf4j;

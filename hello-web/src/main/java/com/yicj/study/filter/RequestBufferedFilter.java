@@ -1,6 +1,6 @@
 package com.yicj.study.filter;
 
-import com.yicj.study.component.BufferedHttpRequest;
+import com.yicj.study.advice.BufferedHttpRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.annotation.Order;

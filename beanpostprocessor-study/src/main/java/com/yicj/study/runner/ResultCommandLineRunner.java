@@ -1,6 +1,6 @@
 package com.yicj.study.runner;
 
-import com.yicj.study.component.UserService;
+import com.yicj.study.advice.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

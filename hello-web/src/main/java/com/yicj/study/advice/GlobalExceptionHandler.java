@@ -1,4 +1,4 @@
-package com.yicj.study.component;
+package com.yicj.study.advice;
 
 import com.yicj.study.constant.CommonConstants;
 import com.yicj.study.exception.BaseException;

@@ -17,6 +17,7 @@
         <module>hello-web</module>
         <module>propertyeditor-study</module>
         <module>transaction-study</module>
+        <module>instantiationawarebeanpostprocessor-study</module>
     </modules>
 
     <parent>

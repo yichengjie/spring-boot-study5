@@ -1,4 +1,4 @@
-package com.yicj.study.component;
+package com.yicj.study.advice;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

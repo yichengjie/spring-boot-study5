@@ -1,6 +1,6 @@
 package com.yicj.study.aware;
 
-import com.yicj.study.component.Flag;
+import com.yicj.study.advice.Flag;
 import org.springframework.beans.factory.Aware;
 
 /**
