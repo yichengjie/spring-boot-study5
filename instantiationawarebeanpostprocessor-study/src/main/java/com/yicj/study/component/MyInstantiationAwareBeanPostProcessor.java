@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        log.info("=====> beanName: {}执行...postProcessBeforeInstantiation");
+        log.info("=====> beanName: {}执行...postProcessBeforeInstantiation", beanName);
         // 利用其生成动态代理
         if (beanClass == UserServiceImpl.class){
             Enhancer enhancer = new Enhancer() ;
@@ -29,20 +29,19 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        log.info("=====> beanName:"+beanName+"执行..postProcessAfterInstantiation\n");
+        log.info("=====> beanName: {}执行..postProcessAfterInstantiation", beanName);
         return false;
     }
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.print("=====> beanName:"+beanName+"执行..postProcessBeforeInitialization\n");
+        log.info("=====> beanName: {}执行..postProcessBeforeInitialization", beanName);
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.print("=====> beanName:"+beanName+"执行..postProcessAfterInitialization\n");
-
+        log.info("=====> beanName: {}执行..postProcessAfterInitialization", beanName);
         return bean;
     }
 }
