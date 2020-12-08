@@ -18,6 +18,7 @@
         <module>propertyeditor-study</module>
         <module>transaction-study</module>
         <module>instantiationawarebeanpostprocessor-study</module>
+        <module>introductioninterceptor-study</module>
     </modules>
 
     <parent>
