@@ -18,7 +18,7 @@ public class QuoteServiceImpl implements IQuoteService {
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, timeout = 20)
     @Override
     public Quote queryById() {
-        String sql = "select * from quota where id =1" ;
+        String sql = "select * from quote where id =1" ;
         return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
             Quote quota = new Quote() ;
             int id = rs.getInt("id");
