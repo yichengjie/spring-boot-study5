@@ -1,4 +1,4 @@
-package com.yicj.study.transaction.config;
+package com.yicj.study.transaction.bootstrap.anno.config;
 
 import com.yicj.study.transaction.service.IQuoteService;
 import com.yicj.study.transaction.service.impl.QuoteServiceImpl;

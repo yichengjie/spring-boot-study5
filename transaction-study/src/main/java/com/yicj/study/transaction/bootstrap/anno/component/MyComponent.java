@@ -1,4 +1,4 @@
-package com.yicj.study.transaction.component;
+package com.yicj.study.transaction.bootstrap.anno.component;
 
 import com.yicj.study.transaction.service.IQuoteService;
 import org.springframework.stereotype.Component;
