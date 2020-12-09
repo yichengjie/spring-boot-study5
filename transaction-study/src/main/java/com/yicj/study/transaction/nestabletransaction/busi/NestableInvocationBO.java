@@ -9,7 +9,12 @@ public class NestableInvocationBO implements SetThisAware<NestableInvocationBO> 
     private NestableInvocationBO bo ;
 
     public void method1(){
-        bo.method2();
+        // 非spring环境单元测试式，这里是null
+        if (bo ==null){
+            this.method2();
+        }else {
+            bo.method2();
+        }
         System.out.println("method1 executed !");
     }
 
@@ -19,7 +24,7 @@ public class NestableInvocationBO implements SetThisAware<NestableInvocationBO> 
 
 
     @Override
-    public void getThis(NestableInvocationBO nestableInvocationBO) {
+    public void setThis(NestableInvocationBO nestableInvocationBO) {
         this.bo = nestableInvocationBO ;
     }
 }

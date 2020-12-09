@@ -10,7 +10,7 @@ public class SetThisBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof SetThisAware){
             SetThisAware bb = (SetThisAware)bean ;
-            bb.getThis(bean);
+            bb.setThis(bean);
         }
         return null;
     }
