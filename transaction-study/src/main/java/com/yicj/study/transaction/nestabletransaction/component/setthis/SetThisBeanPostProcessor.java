@@ -1,4 +1,4 @@
-package com.yicj.study.transaction.nestabletransaction.component;
+package com.yicj.study.transaction.nestabletransaction.component.setthis;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -12,6 +12,6 @@ public class SetThisBeanPostProcessor implements BeanPostProcessor {
             SetThisAware bb = (SetThisAware)bean ;
             bb.setThis(bean);
         }
-        return null;
+        return bean;
     }
 }
