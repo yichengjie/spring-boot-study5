@@ -1,5 +1,9 @@
-package com.yicj.study.transaction.nestabletransaction;
+package com.yicj.study.transaction.nestabletransaction.busi;
 
+import com.yicj.study.transaction.nestabletransaction.component.SetThisAware;
+import org.springframework.stereotype.Service;
+
+@Service
 public class NestableInvocationBO implements SetThisAware<NestableInvocationBO> {
 
     private NestableInvocationBO bo ;

@@ -1,4 +1,4 @@
-package com.yicj.study.transaction.nestabletransaction;
+package com.yicj.study.transaction.nestabletransaction.component;
 
 public interface SetThisAware<T>{
 
