@@ -12,14 +12,23 @@ public class GetThisBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof GetThisAware){
-            GetThisAware delegate = new GetThisAwareImpl() ;
-            DelegatingIntroductionInterceptor interceptor =
-                    new DelegatingIntroductionInterceptor(delegate) ;
-            ProxyFactory weaver = new ProxyFactory(bean) ;
-            weaver.addAdvice(interceptor);
-            GetThisAware proxy = (GetThisAware)weaver.getProxy();
-            return proxy ;
+            return getProxyFactoryProxy(bean) ;
         }
         return bean;
+    }
+
+    private Object getMySelfProxy(Object bean){
+        return GetThisInvocationHandler.getProxy(bean) ;
+    }
+
+    private Object getProxyFactoryProxy(Object bean){
+        GetThisAware delegate = new GetThisAwareImpl() ;
+        DelegatingIntroductionInterceptor interceptor =
+                new DelegatingIntroductionInterceptor(delegate) ;
+        ProxyFactory weaver = new ProxyFactory(bean) ;
+        weaver.setProxyTargetClass(true);
+        weaver.addAdvice(interceptor);
+        Object proxy = weaver.getProxy();
+        return proxy ;
     }
 }

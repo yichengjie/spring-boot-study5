@@ -13,6 +13,7 @@ public class MyRunner implements ApplicationRunner {
     @Autowired
     private SetThisNestableInvocationBO setThisNestableInvocationBO ;
 
+    @Autowired
     private GetThisNestableInvocationBO getThisNestableInvocationBO ;
 
     @Override
