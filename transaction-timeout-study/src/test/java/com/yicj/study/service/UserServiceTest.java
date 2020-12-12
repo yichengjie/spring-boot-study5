@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TransactionTimeoutApp.class)
@@ -27,4 +29,19 @@ public class UserServiceTest {
                 .build() ;
         userService.insert(user) ;
     }
+
+    @Test
+    public void selectAll(){
+        List<User> users = userService.selectAll();
+        log.info("====> {}", users);
+    }
+
+    @Test
+    public void select4Login(){
+        String username = "yicj" ;
+        String password = "123" ;
+        User user = userService.select4Login(username, password);
+        log.info("user : {}", user);
+    }
+
 }

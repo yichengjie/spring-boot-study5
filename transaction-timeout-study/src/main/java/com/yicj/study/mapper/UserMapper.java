@@ -2,6 +2,8 @@ package com.yicj.study.mapper;
 
 import com.yicj.study.entity.User;
 
+import java.util.List;
+
 /**
  * ClassName: UserMapper
  * Description: TODO(描述)
@@ -13,7 +15,7 @@ import com.yicj.study.entity.User;
  */
 public interface UserMapper {
 
-    User selectById(Integer id) ;
+    List<User> selectAll() ;
 
     User select4Login(String username, String password) ;
 

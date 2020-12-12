@@ -19,7 +19,7 @@
         insert into user(username, password, roles) values (#{username}, #{password},#{roles})
     </insert>
 
-    <select id="selectByUserItemResultMapper" resultSets="userItemResultMapper">
+    <select id="selectAll" resultType="User">
         select id ,username, password, roles from user u
     </select>
 </mapper>
