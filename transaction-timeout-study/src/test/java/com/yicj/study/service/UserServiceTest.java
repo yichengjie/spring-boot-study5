@@ -23,7 +23,7 @@ public class UserServiceTest {
     @Test
     public void save(){
         User user = User.builder()
-                .username("张三")
+                .username("李四")
                 .password("123")
                 .roles("test")
                 .build() ;
