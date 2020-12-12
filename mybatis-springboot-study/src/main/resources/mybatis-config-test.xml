@@ -28,6 +28,8 @@
     <!--注意如果这里使用package的话路径一定要与java的mapper接口路径一致，否则将找不到xml文件-->
     <mappers>
         <!--<package name="mappers"/>-->
-        <package name="com.yicj.study.mapper"/>
+        <!--<package name="com.yicj.study.mapper"/>-->
+        <mapper resource="mappers/SysRoleMapper.xml" />
+        <mapper resource="mappers/UserMapper.xml" />
     </mappers>
 </configuration>

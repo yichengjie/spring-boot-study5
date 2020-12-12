@@ -1,6 +1,7 @@
 package com.yicj.study;
 
 import com.yicj.study.entity.User;
+import com.yicj.study.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,7 +18,7 @@ public class MyBatisTest {
         String resource = "mybatis-config-test.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        String  statementId = "com.yicj.study.mapper.UserMapper.selectById" ;
+        String  statementId = UserMapper.class.getName() +".selectById" ;
         //String  statementId = "selectById" ;
         try (SqlSession session = sqlSessionFactory.openSession()) {
             User user = session.selectOne(statementId, 1);
