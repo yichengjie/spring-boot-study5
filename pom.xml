@@ -19,6 +19,7 @@
         <module>transaction-study</module>
         <module>instantiationawarebeanpostprocessor-study</module>
         <module>introductioninterceptor-study</module>
+        <module>transaction-timeout-study</module>
     </modules>
 
     <parent>
