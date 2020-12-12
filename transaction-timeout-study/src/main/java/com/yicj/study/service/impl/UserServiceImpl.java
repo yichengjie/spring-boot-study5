@@ -19,7 +19,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> selectAll() {
-        return userMapper.selectAll();
+        List<User> users = userMapper.selectAll();
+        return users ;
     }
 
     @Override
@@ -27,10 +28,15 @@ public class UserServiceImpl implements UserService {
         return userMapper.select4Login(username, password);
     }
 
+    @Transactional(timeout = 5)
     @Override
     public int insert(User user) {
         userMapper.insert(user);
-        int a = 1/0 ;
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return 1 ;
     }
 }
