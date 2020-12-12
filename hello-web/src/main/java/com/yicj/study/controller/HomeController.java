@@ -1,11 +1,10 @@
 package com.yicj.study.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
+import com.yicj.study.service.UserService;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -13,9 +12,14 @@ import java.util.Map;
 
 @RestController
 public class HomeController {
+
+    @Autowired
+    private UserService userService ;
+
     @PostMapping("/hello")
     @ResponseBody
     public User hello(@RequestBody  User user){
+        userService.hello();
         return user;
     }
 
