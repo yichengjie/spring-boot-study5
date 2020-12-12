@@ -24,4 +24,12 @@ public class UserDaoTest {
         log.info("======> {}", user);
     }
 
+    @Test
+    public void select4Login2(){
+        String username = "yicj" ;
+        String password = "123" ;
+        User user = userDao.select4Login2(username, password);
+        log.info("======> {}", user);
+    }
+
 }
