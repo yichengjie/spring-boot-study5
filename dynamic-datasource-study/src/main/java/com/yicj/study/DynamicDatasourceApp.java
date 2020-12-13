@@ -3,6 +3,7 @@ package com.yicj.study;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * ClassName: MybatisApp
@@ -14,7 +15,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
 @MapperScan("com.yicj.study.mapper")
-@SpringBootApplication
+@SpringBootApplication(
+        exclude = {DataSourceAutoConfiguration.class}
+)
 public class DynamicDatasourceApp {
     public static void main(String[] args) {
         SpringApplication.run(DynamicDatasourceApp.class, args) ;
