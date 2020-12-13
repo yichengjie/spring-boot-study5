@@ -7,5 +7,4 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.yicj.study.postprocessor.hello")
 public class MyConfig {
 
-
 }
