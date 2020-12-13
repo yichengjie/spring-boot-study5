@@ -21,6 +21,7 @@
         <module>introductioninterceptor-study</module>
         <module>transaction-timeout-study</module>
         <module>dynamic-datasource-study</module>
+        <module>beanfactorypostprocessor-study</module>
     </modules>
 
     <parent>

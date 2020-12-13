@@ -51,7 +51,6 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
     @Override
     public void setEnvironment(Environment environment) {
         env = environment ;
-        //this.property = new RelaxedPropertyResolver(environment);
         druidConfig = new DruidDataConfig();
         log.warn("DataSourceAutoConfiguration in DruidDataConfig info=[{}]", druidConfig.toString());
     }
