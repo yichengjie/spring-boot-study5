@@ -14,6 +14,7 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
+// 可以添加多个数据源对象
 @Configuration
 @ConditionalOnProperty(name = "jdbc.driverClassName",  matchIfMissing = false)
 public class DataSourceAutoConfig implements BeanDefinitionRegistryPostProcessor, EnvironmentAware {

@@ -22,6 +22,7 @@
         <module>transaction-timeout-study</module>
         <module>dynamic-datasource-study</module>
         <module>beanfactorypostprocessor-study</module>
+        <module>multiple-datasource-study</module>
     </modules>
 
     <parent>

@@ -25,6 +25,7 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +58,7 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
 
 
     @Bean("dataSource")
-    public DataSource routingDataSource() {
+    public DataSource dataSource() {
         DynamicDataSource dataSource = new DynamicDataSource();
         Set<DataSourceGroupNameEnum> sourceNames = DataSourceGroupNameEnum.getSourceNames();
         if (sourceNames == null || sourceNames.isEmpty()) {
