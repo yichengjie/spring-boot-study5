@@ -9,12 +9,13 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.EnvironmentAware;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Component;
 
-@Component
-//@ConditionalOnProperty(name = "jdbc.driverClassName",  matchIfMissing = false)
+@Configuration
+@ConditionalOnProperty(name = "jdbc.driverClassName",  matchIfMissing = false)
 public class DataSourceAutoConfig implements BeanDefinitionRegistryPostProcessor, EnvironmentAware {
     private Environment env ;
     private JdbcDataProperties jdbcDataProperties ;
