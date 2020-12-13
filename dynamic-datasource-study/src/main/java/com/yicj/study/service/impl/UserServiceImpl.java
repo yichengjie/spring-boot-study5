@@ -1,6 +1,6 @@
 package com.yicj.study.service.impl;
 
-import com.yicj.study.entity.User;
+import com.yicj.study.model.entity.User;
 import com.yicj.study.mapper.UserMapper;
 import com.yicj.study.service.UserService;
 import lombok.Data;

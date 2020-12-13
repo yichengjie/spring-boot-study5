@@ -1,7 +1,7 @@
 package com.yicj.study.dao;
 
 import com.yicj.study.DynamicDatasourceApp;
-import com.yicj.study.entity.User;
+import com.yicj.study.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

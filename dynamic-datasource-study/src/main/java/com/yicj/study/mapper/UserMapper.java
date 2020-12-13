@@ -1,6 +1,6 @@
 package com.yicj.study.mapper;
 
-import com.yicj.study.entity.User;
+import com.yicj.study.model.entity.User;
 
 import java.util.List;
 
