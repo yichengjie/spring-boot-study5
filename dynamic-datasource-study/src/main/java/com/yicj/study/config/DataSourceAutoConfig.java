@@ -25,7 +25,6 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,6 @@ import java.util.Set;
 public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, BeanDefinitionRegistryPostProcessor, ApplicationContextAware {
 
     private Environment env ;
-    //private RelaxedPropertyResolver property;
     private DruidDataConfig druidConfig;
 
     private ApplicationContext applicationContext;
@@ -132,9 +130,7 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
             List<String> slaveDataSources = new ArrayList<>();
             int i = 0 ;
             while (dataSourceSlaveEnabled && moduleDataSourceSlaveEnabled){
-
                 String slave = i == 0 ? datasource_druid_slave : datasource_druid_slave + i;
-
                 /**
                  * 注入到spring bean的名称生成规则；（模块文称+ SlaveDataSource + 序列号1,2,3...）
                  */
@@ -149,7 +145,6 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
                 registry.registerBeanDefinition(datasourceSlaveBeanName, datasourceFactory.getBeanDefinition());
                 slaveDataSources.add(datasourceSlaveBeanName);
                 i++;
-
             }
             /**
              * 将模块初始化后数据源信息，并将结果生成spring bean 名称缓存到DataSourceGroupNameEnum 对象中
@@ -161,8 +156,6 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
     }
 
 
-
-
     /**
      * 初始化DruidDataSource对象
      * 通过BeanDefinitionBuilder生成DruidDataSource对象实现类
@@ -172,7 +165,7 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
      * @param password
      * @return
      */
-    private BeanDefinitionBuilder initDatasourceBean(DruidDataConfig druid,String url,String username,String password){
+    private BeanDefinitionBuilder initDatasourceBean(DruidDataConfig druid, String url, String username, String password){
         BeanDefinitionBuilder datasourceFactory = BeanDefinitionBuilder.genericBeanDefinition(DruidDataSource.class);
         datasourceFactory.setLazyInit(true);          //设置是否懒加载
         datasourceFactory.setScope(BeanDefinition.SCOPE_SINGLETON);       //设置scope,为单例类型
@@ -181,7 +174,6 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
         datasourceFactory.addPropertyValue(URL, url);
         datasourceFactory.addPropertyValue(USERNAME, username);
         datasourceFactory.addPropertyValue(PASSWORD, password);
-
         initDataSource(datasourceFactory,druid);
         return datasourceFactory;
     }
@@ -213,6 +205,7 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
             log.error("druid configuration initialization filter", e);
         }
     }
+
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 

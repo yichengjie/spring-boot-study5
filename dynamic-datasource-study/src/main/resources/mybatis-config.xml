@@ -5,7 +5,7 @@
 <configuration>
     <!--类型别名配置-->
     <typeAliases>
-       <package name="com.yicj.study.entity"/>
+       <package name="com.yicj.study.model.entity"/>
     </typeAliases>
     <!--配置MyBatis 去哪里找映射文件-->
     <!--注意如果这里使用package的话路径一定要与java的mapper接口路径一致，否则将找不到xml文件-->
