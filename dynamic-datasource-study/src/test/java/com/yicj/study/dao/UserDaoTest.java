@@ -1,6 +1,6 @@
 package com.yicj.study.dao;
 
-import com.yicj.study.TransactionTimeoutApp;
+import com.yicj.study.DynamicDatasourceApp;
 import com.yicj.study.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @Slf4j
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TransactionTimeoutApp.class)
+@SpringBootTest(classes = DynamicDatasourceApp.class)
 public class UserDaoTest {
     @Autowired
     private UserDao userDao ;
