@@ -1,7 +1,7 @@
 package com.yicj.study.service;
 
 
-import com.yicj.study.DynamicDatasourceApp;
+import com.yicj.study.MultipleDatasourceApp;
 import com.yicj.study.common.datasource.DataSourceType;
 import com.yicj.study.common.datasource.DataSourceTypeManager;
 import com.yicj.study.model.entity.User;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Slf4j
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = DynamicDatasourceApp.class)
+@SpringBootTest(classes = MultipleDatasourceApp.class)
 public class UserServiceTest {
 
     @Autowired

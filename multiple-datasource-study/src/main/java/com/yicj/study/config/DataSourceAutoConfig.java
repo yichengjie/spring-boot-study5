@@ -16,7 +16,6 @@ import java.util.Map;
 
 @Slf4j
 @Configuration
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class DataSourceAutoConfig{
 
     @Bean("mainDataSource")
@@ -33,7 +32,7 @@ public class DataSourceAutoConfig{
         return dataSource;
     }
 
-    @Bean
+    @Bean("dataSource")
     public DataSource dataSource(){
         ThreadLocalVariableRoutingDataSource dataSource = new ThreadLocalVariableRoutingDataSource() ;
         dataSource.setDefaultTargetDataSource(mainDataSource());

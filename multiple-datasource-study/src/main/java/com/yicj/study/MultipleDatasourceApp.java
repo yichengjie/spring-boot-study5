@@ -14,11 +14,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * 修改记录
  * @version 产品版本信息 yyyy-mm-dd 姓名(邮箱) 修改信息
  */
-///https://www.liangzl.com/get-article-detail-15079.html
 @MapperScan("com.yicj.study.mapper")
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class DynamicDatasourceApp {
+public class MultipleDatasourceApp {
     public static void main(String[] args) {
-        SpringApplication.run(DynamicDatasourceApp.class, args) ;
+        SpringApplication.run(MultipleDatasourceApp.class, args) ;
     }
 }
