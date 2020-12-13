@@ -4,11 +4,15 @@ import com.yicj.study.common.datasource.DataSourceType;
 import com.yicj.study.common.datasource.ThreadLocalVariableRoutingDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,6 +45,15 @@ public class DataSourceAutoConfig{
         targetDataSources.put(DataSourceType.INFO, infoDataSource()) ;
         dataSource.setTargetDataSources(targetDataSources);
         return dataSource ;
+    }
+
+    @Bean("sqlSessionFactory")
+    public SqlSessionFactoryBean sqlSessionFactory(){
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean() ;
+        Resource configLocation = new ClassPathResource("mybatis-config.xml") ;
+        sqlSessionFactoryBean.setConfigLocation(configLocation);
+        sqlSessionFactoryBean.setDataSource(dataSource());
+        return sqlSessionFactoryBean ;
     }
 
 }
