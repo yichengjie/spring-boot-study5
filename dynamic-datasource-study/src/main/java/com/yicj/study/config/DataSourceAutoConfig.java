@@ -65,7 +65,7 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
             throw  new RuntimeException("DynamicDataSource init DataSource isEmpty ");
         }
         for (DataSourceGroupNameEnum dataName : sourceNames) {
-            dataSource.initDataByGroup(dataName,applicationContext);
+            dataSource.initDataByGroup(dataName, applicationContext);
         }
         dataSource.setTargetDataSources();
         log.warn("Dynamic DataSource Registry --- routingDataSource Successfully ...      ");

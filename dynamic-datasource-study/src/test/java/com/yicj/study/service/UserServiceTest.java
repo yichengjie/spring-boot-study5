@@ -2,6 +2,9 @@ package com.yicj.study.service;
 
 
 import com.yicj.study.DynamicDatasourceApp;
+import com.yicj.study.common.datasource.DataSourceHolder;
+import com.yicj.study.model.datasource.DataChooseParam;
+import com.yicj.study.model.datasource.DataSourceGroupNameEnum;
 import com.yicj.study.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -32,6 +35,9 @@ public class UserServiceTest {
 
     @Test
     public void selectAll(){
+        DataSourceGroupNameEnum dataNameAssets = DataSourceGroupNameEnum.DATA_NAME_ASSETS;
+        DataChooseParam dataChooseParam = new DataChooseParam(dataNameAssets.name()) ;
+        DataSourceHolder.putDataSource(dataChooseParam);
         List<User> users = userService.selectAll();
         log.info("====> {}", users);
     }

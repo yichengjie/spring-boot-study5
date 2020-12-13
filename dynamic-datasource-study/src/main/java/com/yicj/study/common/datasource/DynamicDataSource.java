@@ -65,7 +65,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         }
         String master = group.getMasterSources();
         DataSource defaultTargetDataSource = applicationContext.getBean(master, DruidDataSource.class);
-        targetDataSources.put(master, defaultTargetDataSource);
+        targetDataSources.put(9, defaultTargetDataSource);
         List<String> list = group.getSlaveSources();
         if(null != list && !list.isEmpty()){
             for (String slave : list){
