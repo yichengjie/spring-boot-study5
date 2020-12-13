@@ -47,6 +47,14 @@ public class DataSourceAutoConfig{
         return dataSource ;
     }
 
+    /**
+     * @AutoConfigureAfter({ DataSourceAutoConfiguration.class, MybatisLanguageDriverAutoConfiguration.class })
+     * public class MybatisAutoConfiguration implements InitializingBean {
+     * }
+     * 注意MybatisAutoConfiguration中的这句话，如果我们阻止了DataSourceAutoConfiguration自动装载，
+     * 则需要我们自动配置sqlSessionFactory
+     * @return
+     */
     @Bean("sqlSessionFactory")
     public SqlSessionFactoryBean sqlSessionFactory(){
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean() ;
