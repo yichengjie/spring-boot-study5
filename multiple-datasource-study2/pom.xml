@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dynamic-datasource-study</artifactId>
+    <artifactId>multiple-datasource-study2</artifactId>
 
     <dependencies>
         <dependency>
@@ -61,8 +61,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
         </dependency>
 
     </dependencies>

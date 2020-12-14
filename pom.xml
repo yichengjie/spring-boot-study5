@@ -23,6 +23,7 @@
         <module>dynamic-datasource-study</module>
         <module>beanfactorypostprocessor-study</module>
         <module>multiple-datasource-study</module>
+        <module>multiple-datasource-study2</module>
     </modules>
 
     <parent>
@@ -62,6 +63,12 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>2.9.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.24</version>
             </dependency>
 
             <dependency>

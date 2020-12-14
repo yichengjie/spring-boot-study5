@@ -2,7 +2,6 @@ package com.yicj.study.config;
 
 import com.alibaba.druid.pool.DruidAbstractDataSource;
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import com.yicj.study.common.constant.DataDruidConfig;
 import com.yicj.study.common.datasource.DynamicDataSource;
 import com.yicj.study.model.datasource.DataSourceGroupNameEnum;
@@ -34,8 +33,7 @@ import java.util.Set;
 
 @Slf4j
 @Configuration
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,
-        DruidDataSourceAutoConfigure.class, JdbcTemplateAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,JdbcTemplateAutoConfiguration.class})
 @ConditionalOnProperty(name = DataDruidConfig.datasource_druid_config_enabled,  matchIfMissing = false)
 public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, BeanDefinitionRegistryPostProcessor, ApplicationContextAware {
 
@@ -73,7 +71,6 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
     }
 
 
-
     /**
      * 将 DataSourceGroupNameEnum 数据源组 生成bean对象注入到spring管理容器中；
      * 通过 datasource_druid_enabled 对应模块数据库配置总开关，默认值为true
@@ -84,6 +81,12 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
      */
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+
+        //this.registryDatasoruce(registry);
+    }
+
+
+    private void registryDatasoruce(BeanDefinitionRegistry registry){
         Set<DataSourceGroupNameEnum> sourceNames = null;
         sourceNames = DataSourceGroupNameEnum.getSourceNames();
         if (sourceNames == null || sourceNames.isEmpty()) {
@@ -152,7 +155,6 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
             DataSourceGroupNameEnum.setDataSource(dataName,datasourceMasterBeanName,slaveDataSources);
             log.warn("DataSourceAutoConfig postProcessBeanDefinitionRegistry Registry --- dataSourceName[{}] Successfully ...",datasourceMasterBeanName);
         }
-
     }
 
 
