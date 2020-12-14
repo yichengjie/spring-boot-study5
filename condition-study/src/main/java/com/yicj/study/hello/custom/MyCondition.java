@@ -1,4 +1,4 @@
-package com.yicj.study.custom;
+package com.yicj.study.hello.custom;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;

@@ -1,6 +1,6 @@
-package com.yicj.study.condition;
+package com.yicj.study.hello.condition;
 
-import com.yicj.study.custom.MyConditionAnno;
+import com.yicj.study.hello.custom.MyConditionAnno;
 import org.springframework.stereotype.Component;
 
 /**

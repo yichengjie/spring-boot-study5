@@ -1,7 +1,7 @@
-package com.yicj.study;
+package com.yicj.study.hello;
 
-import com.yicj.study.condition.A;
-import com.yicj.study.condition.B;
+import com.yicj.study.hello.condition.A;
+import com.yicj.study.hello.condition.B;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

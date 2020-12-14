@@ -1,4 +1,4 @@
-package com.yicj.study.condition;
+package com.yicj.study.hello.condition;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
