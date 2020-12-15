@@ -82,7 +82,7 @@ public class DataSourceAutoConfig implements DataDruidConfig, EnvironmentAware, 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
 
-        //this.registryDatasoruce(registry);
+        this.registryDatasoruce(registry);
     }
 
 

@@ -1,6 +1,5 @@
 package com.yicj.study.config;
 
-import com.mysql.cj.jdbc.Driver;
 import com.yicj.study.common.datasource.DataSourceType;
 import com.yicj.study.common.datasource.ThreadLocalVariableRoutingDataSource;
 import lombok.extern.slf4j.Slf4j;
@@ -9,11 +8,9 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.EnvironmentAware;
