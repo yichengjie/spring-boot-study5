@@ -24,6 +24,7 @@
         <module>beanfactorypostprocessor-study</module>
         <module>multiple-datasource-study</module>
         <module>multiple-datasource-study2</module>
+        <module>hello-junit</module>
     </modules>
 
     <parent>
