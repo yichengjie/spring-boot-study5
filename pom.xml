@@ -26,6 +26,7 @@
         <module>multiple-datasource-study2</module>
         <module>hello-junit</module>
         <module>bean-wrapper-study</module>
+        <module>mvc-spring-study</module>
     </modules>
 
     <parent>
