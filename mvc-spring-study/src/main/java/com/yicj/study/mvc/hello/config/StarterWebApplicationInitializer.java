@@ -6,7 +6,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.Filter;
 
 public class StarterWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-
     // 根容器的配置类
     @Override
     protected Class<?>[] getRootConfigClasses() {

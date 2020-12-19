@@ -7,6 +7,4 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.yicj.study.mvc.hello.service")
 public class RootConfig {
 
-
-
 }
