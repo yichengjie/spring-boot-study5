@@ -94,7 +94,28 @@
     </body>
     </html>
     ```
-6. Servlet3.x规范利用spi机制，自动加载实现ServletContainerInitializer接口的类,并调用onStartup方法。
+6. 添加依赖
+    ```xml
+    <!-- 注意这里要写war否则项目可能无法运行-->
+    <packaging>war</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    ```
+7. Servlet3.x规范利用spi机制，自动加载实现ServletContainerInitializer接口的类,并调用onStartup方法。
     ```txt
     a) SpringServletContainerInitializer实现ServletContainerInitializer接口。
     b) SpringServletContainerInitializer添加@HandlesTypes(WebApplicationInitializer.class)注解,表示获取所有WebApplicationInitializer实现类。
