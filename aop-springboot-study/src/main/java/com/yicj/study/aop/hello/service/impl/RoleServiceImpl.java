@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Slf4j
-@Service
+@Service("roleService")
 public class RoleServiceImpl implements RoleService {
 
     @Autowired
