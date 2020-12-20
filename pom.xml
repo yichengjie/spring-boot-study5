@@ -27,6 +27,7 @@
         <module>hello-junit</module>
         <module>bean-wrapper-study</module>
         <module>mvc-spring-study</module>
+        <module>aop-springboot-study</module>
     </modules>
 
     <parent>
