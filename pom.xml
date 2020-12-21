@@ -28,6 +28,7 @@
         <module>bean-wrapper-study</module>
         <module>mvc-spring-study</module>
         <module>aop-springboot-study</module>
+        <module>excel-poi-study</module>
     </modules>
 
     <parent>
