@@ -36,6 +36,11 @@ public class ExcelUtils {
         private List<ColumnInfo> columnInfos ;
     }
 
+    public static Workbook exportExcel(ExportExcelInfo exportExcelInfo) {
+        List<ExportExcelInfo> list = new ArrayList<>() ;
+        return exportExcel(list) ;
+    }
+
     public static Workbook exportExcel(List<ExportExcelInfo> list) {
         HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
         for (ExportExcelInfo exportExcelInfo: list){
