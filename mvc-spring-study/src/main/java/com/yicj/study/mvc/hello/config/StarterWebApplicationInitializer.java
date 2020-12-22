@@ -1,5 +1,7 @@
 package com.yicj.study.mvc.hello.config;
 
+import com.yicj.study.mvc.hello.entity.User;
+import com.yicj.study.mvc.hello.filter.UserContextFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -29,6 +31,7 @@ public class StarterWebApplicationInitializer extends AbstractAnnotationConfigDi
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter("UTF-8", true) ;
-        return new Filter[]{encodingFilter};
+        UserContextFilter userContextFilter = new UserContextFilter() ;
+        return new Filter[]{encodingFilter,userContextFilter};
     }
 }

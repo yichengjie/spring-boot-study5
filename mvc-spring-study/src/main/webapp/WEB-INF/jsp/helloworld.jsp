@@ -7,5 +7,7 @@
 </head>
 <body>
     Hello World!<br/>
+    token: ${token}<br>
+    xtoken: ${xtoken}<br>
 </body>
 </html>
