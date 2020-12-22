@@ -39,7 +39,9 @@ public class ExcelUtils {
     public static Workbook exportExcel(List<ExportExcelInfo> list) {
         HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
         for (ExportExcelInfo exportExcelInfo: list){
-            doExportExcel(hssfWorkbook, exportExcelInfo);
+            if (!CollectionUtils.isEmpty(exportExcelInfo.getDataList())){
+                doExportExcel(hssfWorkbook, exportExcelInfo);
+            }
         }
         return hssfWorkbook;
     }
