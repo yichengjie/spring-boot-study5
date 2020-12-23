@@ -50,24 +50,19 @@ public class ExcelUtilsTest {
         UserInfo tempUser1 = new UserInfo("alien","11","1","clone");
         UserInfo tempUser2 = new UserInfo("寿限无寿限无EWQEWQEWQEWQE","2222222","22","dsadsa");
         UserInfo tempUser3 = new UserInfo("dwqdwqdw","222","2","2");
-
+        List<UserInfo> users = new ArrayList<UserInfo>(){{add(tempUser1);add(tempUser2);add(tempUser3);}};
+        ExportSheetInfo export1 = new ExportSheetInfo("user", users, null);
+        /////
         DogeInfo dogeInfo1 = new DogeInfo("alien","11","1","clone");
         DogeInfo dogeInfo12 = new DogeInfo("寿限无寿限无EWQEWQEWQEWQE","2222222","22","dsadsa");
         DogeInfo dogeInfo13 = new DogeInfo("dwqdwqdw","222","2","2");
-        List<UserInfo> users = new ArrayList<UserInfo>(){{add(tempUser1);add(tempUser2);add(tempUser3);}};
-
         List<DogeInfo> dogeInfos = new ArrayList<DogeInfo>(){{add(dogeInfo13);add(dogeInfo12);add(dogeInfo1);}};
-        List<DogeInfo> dogeInfos1 = new ArrayList<>();
-
-        ExportSheetInfo export1 = new ExportSheetInfo("user", users, null);
         ExportSheetInfo export2 = new ExportSheetInfo("doge", dogeInfos, null);
-        ExportSheetInfo export3 = new ExportSheetInfo("doge2", dogeInfos1, null);
-        ExportSheetInfo export4 = new ExportSheetInfo("doge3", null, null);
+        ////
         List<ExportSheetInfo> exports = new ArrayList<>() ;
         exports.add(export1) ;
         exports.add(export2) ;
-        exports.add(export3) ;
-        exports.add(export4) ;
+        //
         Workbook workbook = ExcelUtils.exportExcel(exports);
         return  workbook;
     }
