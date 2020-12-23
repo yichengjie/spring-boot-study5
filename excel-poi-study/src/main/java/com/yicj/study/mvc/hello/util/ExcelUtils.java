@@ -1,8 +1,8 @@
 package com.yicj.study.mvc.hello.util;
 
 import com.yicj.study.mvc.hello.annotation.ExcelAttribute;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.yicj.study.mvc.hello.entity.ColumnInfo;
+import com.yicj.study.mvc.hello.entity.ExportExcelInfo;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -18,23 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExcelUtils {
-
-    @Data
-    @AllArgsConstructor
-    private static class ColumnInfo{
-        private String fieldName ;
-        private String title ;
-        private int index ;
-        private boolean adaptive   ;
-    }
-
-    @Data
-    @AllArgsConstructor
-    public static class ExportExcelInfo{
-        private String sheetName ;
-        private List<?> dataList ;
-        private List<ColumnInfo> columnInfos ;
-    }
 
     public static Workbook exportExcel(ExportExcelInfo exportExcelInfo) {
         List<ExportExcelInfo> list = new ArrayList<>() ;
@@ -75,7 +58,7 @@ public class ExcelUtils {
             Cell cell = titleRow.createCell(columnInfo.getIndex());
             cell.setCellValue(columnInfo.getTitle());
             if (columnInfo.isAdaptive()){
-                sheet.autoSizeColumn(columnInfo.index);
+                sheet.autoSizeColumn(columnInfo.getIndex());
             }
         }
     }
