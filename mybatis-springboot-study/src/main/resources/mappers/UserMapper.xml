@@ -8,11 +8,18 @@
         select * from user where id = #{id}
     </select>
 
-    <select id="select4Login" resultType="User">
+    <select id="select4Login" resultType="User" parameterType="com.yicj.study.vo.LoginParam">
         select *
         from user u
-        where u.username = #{username}
-        and u.password = #{password}
+        where 1=1
+        <choose>
+            <when test="airlineFlag == 'x'.toString()">
+                and username = #{username}
+            </when>
+            <otherwise>
+                and password = #{password}
+            </otherwise>
+        </choose>
     </select>
 
     <insert id="insert" parameterType="User">

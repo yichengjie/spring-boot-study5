@@ -2,7 +2,10 @@ package com.yicj.study.mapper;
 
 import com.yicj.study.common.MyKeyList;
 import com.yicj.study.entity.User;
+import com.yicj.study.vo.LoginParam;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * ClassName: UserMapper
@@ -17,7 +20,7 @@ public interface UserMapper {
 
     User selectById(Integer id) ;
 
-    User select4Login(String username, String password) ;
+    List<User> select4Login(LoginParam loginParam) ;
 
     int insert(User user) ;
 

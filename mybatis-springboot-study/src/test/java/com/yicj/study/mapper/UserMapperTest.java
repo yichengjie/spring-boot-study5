@@ -3,6 +3,7 @@ package com.yicj.study.mapper;
 import com.yicj.study.MybatisApp;
 import com.yicj.study.common.MyKeyList;
 import com.yicj.study.entity.User;
+import com.yicj.study.vo.LoginParam;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -42,5 +44,18 @@ public class UserMapperTest {
         list.forEach(user -> log.info("{}", user));
         Set<String> keys = list.getKeys();
         keys.forEach(id -> log.info("id : {}", id));
+    }
+
+    @Test
+    public void select4Login(){
+        String username ="yicj" ;
+        String password = "123";
+        String airlineFlag = "x" ;
+        LoginParam param = new LoginParam() ;
+        param.setAirlineFlag(airlineFlag);
+        param.setUsername(username);
+        param.setPassword(password);
+        List<User> user = userMapper.select4Login(param);
+        System.out.println(user);
     }
 }

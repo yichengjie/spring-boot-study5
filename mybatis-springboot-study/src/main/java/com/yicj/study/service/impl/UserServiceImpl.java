@@ -4,11 +4,14 @@ import com.yicj.study.common.MyKeyList;
 import com.yicj.study.entity.User;
 import com.yicj.study.mapper.UserMapper;
 import com.yicj.study.service.UserService;
+import com.yicj.study.vo.LoginParam;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Data
 @Service
@@ -23,8 +26,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User select4Login(String username, String password) {
-        return userMapper.select4Login(username, password);
+    public List<User> select4Login(LoginParam loginParam) {
+        return userMapper.select4Login(loginParam);
     }
 
     @Override
