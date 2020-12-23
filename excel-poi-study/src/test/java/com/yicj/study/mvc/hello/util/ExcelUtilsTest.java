@@ -1,6 +1,7 @@
 package com.yicj.study.mvc.hello.util;
 
 import com.yicj.study.mvc.hello.entity.DogeInfo;
+import com.yicj.study.mvc.hello.common.ExportSheetInfo;
 import com.yicj.study.mvc.hello.entity.UserInfo;
 import org.apache.poi.ss.usermodel.Workbook;
 
@@ -58,11 +59,11 @@ public class ExcelUtilsTest {
         List<DogeInfo> dogeInfos = new ArrayList<DogeInfo>(){{add(dogeInfo13);add(dogeInfo12);add(dogeInfo1);}};
         List<DogeInfo> dogeInfos1 = new ArrayList<>();
 
-        ExcelUtils.ExportExcelInfo export1 = new ExcelUtils.ExportExcelInfo("user", users, null);
-        ExcelUtils.ExportExcelInfo export2 = new ExcelUtils.ExportExcelInfo("doge", dogeInfos, null);
-        ExcelUtils.ExportExcelInfo export3 = new ExcelUtils.ExportExcelInfo("doge2", dogeInfos1, null);
-        ExcelUtils.ExportExcelInfo export4 = new ExcelUtils.ExportExcelInfo("doge3", null, null);
-        List<ExcelUtils.ExportExcelInfo> exports = new ArrayList<>() ;
+        ExportSheetInfo export1 = new ExportSheetInfo("user", users, null);
+        ExportSheetInfo export2 = new ExportSheetInfo("doge", dogeInfos, null);
+        ExportSheetInfo export3 = new ExportSheetInfo("doge2", dogeInfos1, null);
+        ExportSheetInfo export4 = new ExportSheetInfo("doge3", null, null);
+        List<ExportSheetInfo> exports = new ArrayList<>() ;
         exports.add(export1) ;
         exports.add(export2) ;
         exports.add(export3) ;
