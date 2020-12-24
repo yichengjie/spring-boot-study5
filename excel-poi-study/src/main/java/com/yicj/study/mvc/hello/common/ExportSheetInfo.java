@@ -1,6 +1,5 @@
 package com.yicj.study.mvc.hello.common;
 
-import com.yicj.study.mvc.hello.common.ColumnInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.util.List;
