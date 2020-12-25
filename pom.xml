@@ -29,6 +29,7 @@
         <module>mvc-spring-study</module>
         <module>aop-springboot-study</module>
         <module>excel-poi-study</module>
+        <module>redis-hello-study</module>
     </modules>
 
     <parent>
