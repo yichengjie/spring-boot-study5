@@ -1,6 +1,7 @@
 package com.yicj.study.redis.config;
 
 import com.yicj.study.redis.properties.redis.RedisProperties;
+import com.yicj.study.redis.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -37,7 +38,8 @@ public class MyConfig {
         RedisSentinelConfiguration configuration = new RedisSentinelConfiguration();
         //配置matser的名称
         configuration.master(redisProperties.getMaster().getName()) ;
-        configuration.setPassword(redisProperties.getPassword());
+        String decodePwd = CommonUtil.decode(redisProperties.getPassword());
+        configuration.setPassword(decodePwd);
         //配置redis的哨兵sentinel
         Set<RedisNode> redisNodeSet = new HashSet<>();
         redisProperties.getSentinel().forEach(item->{
