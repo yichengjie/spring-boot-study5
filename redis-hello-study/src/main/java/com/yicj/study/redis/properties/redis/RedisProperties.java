@@ -13,5 +13,5 @@ public class RedisProperties {
     private String password ;
     private List<SentinelNode> sentinelNodes = new ArrayList<>();
     private String userName ;
-
 }
+
