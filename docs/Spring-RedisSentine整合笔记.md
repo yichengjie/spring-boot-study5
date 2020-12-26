@@ -15,11 +15,11 @@
     jedis.poolConfig.maxTotal=20
     jedis.poolConfig.testOnBorrow=false
     jedis.sentinelNodes[0].host=10.221.xxx.xx
-    jedis.sentinelNodes[0].port=26480
+    jedis.sentinelNodes[0].port=6379
     jedis.sentinelNodes[1].host=10.221.xxx.xx
-    jedis.sentinelNodes[1].port=26480
+    jedis.sentinelNodes[1].port=6379
     jedis.sentinelNodes[2].host=10.221.xxx.xx
-    jedis.sentinelNodes[2].port=26480
+    jedis.sentinelNodes[2].port=6379
     jedis.master.name=mymaster
     jedis.password=5OQ==
     ```
