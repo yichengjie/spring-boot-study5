@@ -8,9 +8,10 @@ import java.util.List;
 @Data
 @ConfigurationProperties(prefix = "jedis")
 public class RedisProperties {
-    private PoolConfig pool ;
+    private PoolConfig poolConfig ;
     private Master master ;
     private String password ;
-    private List<SentinelNode> sentinel = new ArrayList<>();
+    private List<SentinelNode> sentinelNodes = new ArrayList<>();
+    private String userName ;
 
 }

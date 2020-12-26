@@ -14,9 +14,9 @@ public class MyRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        redisTemplate.opsForValue().set("helloworld","yicj-hello-test");
-        Thread.sleep(1000);
-        Object helloworld = redisTemplate.opsForValue().get("helloworld");
-        System.out.println("====> " + helloworld);
+//        redisTemplate.opsForValue().set("helloworld","yicj-hello-test");
+//        Thread.sleep(1000);
+//        Object helloworld = redisTemplate.opsForValue().get("helloworld");
+//        System.out.println("====> " + helloworld);
     }
 }

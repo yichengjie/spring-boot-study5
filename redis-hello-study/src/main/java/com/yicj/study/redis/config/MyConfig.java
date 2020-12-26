@@ -13,7 +13,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisPoolConfig;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,9 +26,9 @@ public class MyConfig {
     @Bean
     public JedisPoolConfig jedisPoolConfig(){
         JedisPoolConfig config = new JedisPoolConfig();
-        config.setMaxIdle(redisProperties.getPool().getMaxIdle());
-        config.setMaxTotal(redisProperties.getPool().getMaxTotal());
-        config.setTestOnBorrow(redisProperties.getPool().getTestOnBorrow());
+        config.setMaxIdle(redisProperties.getPoolConfig().getMaxIdle());
+        config.setMaxTotal(redisProperties.getPoolConfig().getMaxTotal());
+        config.setTestOnBorrow(redisProperties.getPoolConfig().getTestOnBorrow());
         return config;
     }
 
@@ -42,7 +41,7 @@ public class MyConfig {
         configuration.setPassword(decodePwd);
         //配置redis的哨兵sentinel
         Set<RedisNode> redisNodeSet = new HashSet<>();
-        redisProperties.getSentinel().forEach(item->{
+        redisProperties.getSentinelNodes().forEach(item->{
             redisNodeSet.add(new RedisNode(item.getHost(), item.getPort())) ;
         });
         configuration.setSentinels(redisNodeSet);
