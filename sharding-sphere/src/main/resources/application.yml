@@ -1,0 +1,47 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: db1,db2,db3,db4
+      db1:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: qwer123@
+        type: com.zaxxer.hikari.HikariDataSource
+        maximumPoolSize: 10
+      db2:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: qwer123@
+        type: com.zaxxer.hikari.HikariDataSource
+        maximumPoolSize: 10
+      db3:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/db3?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: qwer123@
+        type: com.zaxxer.hikari.HikariDataSource
+        maximumPoolSize: 10
+      db4:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/db4?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: qwer123@
+        type: com.zaxxer.hikari.HikariDataSource
+        maximumPoolSize: 10
+    rules:
+      sharding:
+      readwrite-splitting:
+        load-balancers:
+          round_robin:
+            type: ROUND_ROBIN
+        data-sources:
+          read_write_db:
+            type: Static
+            props:
+              write-data-source-name: db1
+              read-data-source-names: db2,db3,db4
+            load-balancer-name: round_robin
+    props:
+      sql-show: true

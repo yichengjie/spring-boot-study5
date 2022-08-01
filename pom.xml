@@ -30,6 +30,7 @@
         <module>aop-springboot-study</module>
         <module>excel-poi-study</module>
         <module>redis-hello-study</module>
+        <module>sharding-sphere</module>
     </modules>
 
     <parent>
