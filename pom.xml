@@ -31,6 +31,7 @@
         <module>excel-poi-study</module>
         <module>redis-hello-study</module>
         <module>sharding-sphere</module>
+        <module>muiti-view-resolver</module>
     </modules>
 
     <parent>

@@ -15,9 +15,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(String username) {
-
         log.info("save user {}", username);
-
-
     }
 }
