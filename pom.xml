@@ -32,6 +32,7 @@
         <module>redis-hello-study</module>
         <module>sharding-sphere</module>
         <module>muiti-view-resolver</module>
+        <module>hello-world</module>
     </modules>
 
     <parent>
@@ -120,6 +121,12 @@
                 <artifactId>jsp-api</artifactId>
                 <version>2.2</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.7.12</version>
             </dependency>
 
         </dependencies>
