@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.zip.GZIPOutputStream;
 
@@ -24,7 +26,7 @@ public class HelloController {
     @GetMapping("/download")
     public ResponseEntity<byte[]> download() throws IOException {
         HttpHeaders headers= new  HttpHeaders();
-        headers.set("Content-Encoding", "gzip");
+        //headers.set("Content-Encoding", "gzip");
         FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.png") ;
         //FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.txt") ;
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -34,6 +36,18 @@ public class HelloController {
         inputStream.close();
         byte[] resultBytes = outputStream.toByteArray();
         return new ResponseEntity<>(resultBytes, headers, HttpStatus.CREATED); //返回压缩文件流
+    }
+
+    @GetMapping("/download2")
+    public void download2(HttpServletResponse response) throws IOException {
+        //headers.set("Content-Encoding", "gzip");
+        FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.png") ;
+        //FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.txt") ;
+        try (GZIPOutputStream gzip = new GZIPOutputStream(response.getOutputStream())) {
+            StreamUtils.copy(inputStream, gzip) ;
+            gzip.flush();
+        }
+        inputStream.close();
     }
 
 }
