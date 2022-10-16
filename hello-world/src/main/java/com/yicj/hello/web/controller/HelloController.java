@@ -26,7 +26,7 @@ public class HelloController {
     @GetMapping("/download")
     public ResponseEntity<byte[]> download() throws IOException {
         HttpHeaders headers= new  HttpHeaders();
-        //headers.set("Content-Encoding", "gzip");
+        headers.set("Content-Encoding", "gzip");
         FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.png") ;
         //FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.txt") ;
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -40,14 +40,23 @@ public class HelloController {
 
     @GetMapping("/download2")
     public void download2(HttpServletResponse response) throws IOException {
-        //headers.set("Content-Encoding", "gzip");
         FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.png") ;
-        //FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.txt") ;
-        try (GZIPOutputStream gzip = new GZIPOutputStream(response.getOutputStream())) {
-            StreamUtils.copy(inputStream, gzip) ;
-            gzip.flush();
-        }
+        response.setContentType("application/octet-stream");
+        StreamUtils.copy(inputStream, response.getOutputStream()) ;
         inputStream.close();
+    }
+
+    //Content-Type:
+    //application/octet-stream
+    @GetMapping("/download3")
+    public ResponseEntity<byte[]> download3() throws IOException {
+        HttpHeaders headers= new  HttpHeaders();
+        FileInputStream inputStream = new FileInputStream("/Users/yicj/temp/hello.png") ;
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        StreamUtils.copy(inputStream, outputStream) ;
+        inputStream.close();
+        byte[] resultBytes = outputStream.toByteArray();
+        return new ResponseEntity<>(resultBytes, headers, HttpStatus.CREATED); //返回压缩文件流
     }
 
 }
