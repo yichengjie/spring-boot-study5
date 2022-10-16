@@ -45,7 +45,6 @@ public class MDCInsertingServletFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        log.info("---------------------");
         insertIntoMDC(request);
         try {
             chain.doFilter(request, response);
