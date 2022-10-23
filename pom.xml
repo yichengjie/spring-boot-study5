@@ -33,6 +33,7 @@
         <module>sharding-sphere</module>
         <module>muiti-view-resolver</module>
         <module>hello-world</module>
+        <module>environment-study</module>
     </modules>
 
     <parent>
