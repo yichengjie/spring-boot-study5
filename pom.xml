@@ -34,6 +34,7 @@
         <module>muiti-view-resolver</module>
         <module>hello-world</module>
         <module>environment-study</module>
+        <module>task-decorator-study</module>
     </modules>
 
     <parent>

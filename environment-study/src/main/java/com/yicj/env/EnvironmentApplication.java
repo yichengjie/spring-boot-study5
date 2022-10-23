@@ -16,6 +16,7 @@ import java.util.List;
 @SpringBootApplication
 public class EnvironmentApplication {
 
+    //https://blog.csdn.net/qq_40756113/article/details/123074848
     public static void main(String[] args) {
         ApplicationContext applicationContext = new SpringApplicationBuilder(EnvironmentApplication.class)
                 .bannerMode(Banner.Mode.OFF)

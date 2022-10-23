@@ -110,8 +110,7 @@ public class MyJsonEnvironmentPostProcessor implements EnvironmentPostProcessor 
             for (Object key : propertySource.keySet()) {
                 String stringKey = (String) key;
                 if (addedKeys.add(key)) {
-                    filteredProperties.setProperty(stringKey,
-                            propertySource.getProperty(stringKey));
+                    filteredProperties.setProperty(stringKey, propertySource.getProperty(stringKey));
                 }
             }
         }
